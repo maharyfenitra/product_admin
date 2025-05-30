@@ -1,54 +1,100 @@
-# React + TypeScript + Vite
+# 🛠️ Admin Dashboard Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est une interface d'administration développée avec **React 19**, **Vite**, **TypeScript**, et **React Query**. Il est conçu pour interagir avec une API backend Express.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Démarrage rapide
 
-## Expanding the ESLint configuration
+### 1. Installation des dépendances
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+pnpm install
+# ou
+npm install
+# ou
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Lancer l'application en développement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm dev
+# ou
+npm run dev
 ```
+
+### 3. Build de production
+
+```bash
+pnpm build
+```
+
+### 4. Prévisualisation du build
+
+```bash
+pnpm preview
+```
+
+---
+
+## 📦 Stack technique
+
+- **React 19**
+- **TypeScript**
+- **Vite**
+- **React Query** (gestion de l’état serveur)
+- **Axios** (requêtes HTTP)
+- **ESLint** (linting)
+
+---
+
+## 📁 Structure principale
+
+```bash
+src/
+├── components/         # Composants réutilisables (ex: ProductPanel)
+├── hooks/              # Hooks personnalisés (ex: useDashboard)
+├── services/           # Appels API avec axios
+├── types/              # Types TypeScript globaux (ex: ProductType)
+└── App.tsx             # Point d'entrée React
+```
+
+---
+
+## 🔗 Intégration backend
+
+Le backend repose sur **Express** et TypeScript. Pour le faire tourner :
+
+```bash
+cd ../api
+pnpm install
+pnpm dev
+```
+
+L’API doit être accessible depuis le frontend (ex: `http://localhost:3000/products`). Assurez-vous que les routes correspondent bien à celles utilisées dans les hooks (axios).
+
+---
+
+## ✅ Linting
+
+Pour vérifier le code avec ESLint :
+
+```bash
+pnpm lint
+```
+
+---
+
+## 🧪 TODO (prochaines étapes)
+
+- Authentification / gestion des sessions
+- Pagination côté client ou serveur
+- Notifications ou toasts pour les actions (ex: produit créé)
+- Amélioration de l’UX/UI (ajout de styles)
+
+---
+
+## 📃 Licence
+
+Ce projet est open-source et libre d’utilisation pour vos projets personnels ou professionnels.
