@@ -55,9 +55,8 @@ pnpm preview
 src/
 ├── components/         # Composants réutilisables (ex: ProductPanel)
 ├── hooks/              # Hooks personnalisés (ex: useDashboard)
-├── services/           # Appels API avec axios
-├── types/              # Types TypeScript globaux (ex: ProductType)
-└── App.tsx             # Point d'entrée React
+├── lib/                # Librairie réutilisable
+
 ```
 
 ---
@@ -72,7 +71,7 @@ pnpm install
 pnpm dev
 ```
 
-L’API doit être accessible depuis le frontend (ex: `http://localhost:3000/products`). Assurez-vous que les routes correspondent bien à celles utilisées dans les hooks (axios).
+L’API doit être accessible depuis le frontend (ex: `http://localhost:3001/`). Assurez-vous que les routes correspondent bien à celles utilisées dans les hooks (axios).
 
 ---
 
@@ -86,12 +85,6 @@ pnpm lint
 
 ---
 
-## 🧪 TODO (prochaines étapes)
-
-- Authentification / gestion des sessions
-- Pagination côté client ou serveur
-- Notifications ou toasts pour les actions (ex: produit créé)
-- Amélioration de l’UX/UI (ajout de styles)
 
 ---
 
